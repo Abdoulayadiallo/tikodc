@@ -3,7 +3,10 @@ import 'package:intl/intl.dart';
 
 class LikeWidget extends StatelessWidget {
   final int count;
-  const LikeWidget({Key? key, required this.count}) : super(key: key);
+  final Function()? onTap;
+
+  const LikeWidget({Key? key, required this.count, this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class LikeWidget extends StatelessWidget {
               color: Colors.transparent,
               child: Center(
                 child: IconButton(
-                  onPressed: () => print("Likez la video"),
+                  onPressed: onTap,
                   icon: const Icon(
                     Icons.favorite,
                     color: Colors.white38,

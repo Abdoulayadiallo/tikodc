@@ -3,7 +3,10 @@ import 'package:intl/intl.dart';
 
 class CommentWidget extends StatelessWidget {
   final int count;
-  const CommentWidget({Key? key, required this.count}) : super(key: key);
+  final Function()? onTap;
+
+  const CommentWidget({Key? key, required this.count, this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class CommentWidget extends StatelessWidget {
               color: Colors.transparent,
               child: Center(
                 child: IconButton(
-                  onPressed: () => print("commentez la video"),
+                  onPressed: onTap,
                   icon: const Icon(
                     Icons.comment,
                     color: Colors.white38,
@@ -29,9 +32,14 @@ class CommentWidget extends StatelessWidget {
             ),
           ),
         ),
-        Text(NumberFormat.compact().format(count),
-            style: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500))
+        Text(
+          NumberFormat.compact().format(count),
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+        )
       ],
     );
   }

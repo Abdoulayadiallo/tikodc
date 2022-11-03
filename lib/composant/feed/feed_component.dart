@@ -16,7 +16,7 @@ class FeedComponent extends StatelessWidget {
           media: item['media'],
         ),
         Positioned(
-          bottom: 100.0,
+          bottom: 110.0,
           left: 20.0,
           right: 100.0,
           child: ProfileComponent(
@@ -25,7 +25,7 @@ class FeedComponent extends StatelessWidget {
         ),
         Positioned(
           right: 10.0,
-          bottom: 100.0,
+          bottom: 120.0,
           child: SidebarComponent(
             item: item,
           ),
