@@ -26,7 +26,7 @@ class AvatarWidget extends StatelessWidget {
               ),
               child: CircleAvatar(
                 radius: 30,
-                backgroundImage: NetworkImage(
+                backgroundImage: AssetImage(
                   profile["avatar"],
                 ),
               ),
@@ -35,7 +35,7 @@ class AvatarWidget extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () => print("follow"),
-          child: CircleAvatar(
+          child: const CircleAvatar(
             backgroundColor: Colors.pink,
             radius: 15.0,
             child: Icon(

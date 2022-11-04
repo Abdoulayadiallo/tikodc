@@ -1,46 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:tikodc/composant/feed/feed_component.dart';
+import 'package:tikodc/ecran/profile.dart';
 
 const List<Map<String, dynamic>> data = [
   {
     "profile": {
       "username": "Djobrin",
-      "avatar": "https://i.pravatar.cc/150?img=1",
+      "avatar": "assets/images/image-1.jpg",
     },
     "media": "assets/videos/video-1.mp4",
     "description": "Lorem ipsum dolor sit amet,",
     "comment": 234,
     "like": 9089,
+    "bookmark": 9,
+    "share": 89,
   },
   {
     "profile": {
       "username": "Alasko",
-      "avatar": "https://i.pravatar.cc/150?img=2",
+      "avatar": "assets/images/image-2.jpg",
     },
     "media": "assets/videos/video-2.mp4",
     "description": "consectetur adipiscing elit",
     "comment": 4340,
     "like": 5089,
+    "bookmark": 59,
+    "share": 589,
   },
   {
     "profile": {
       "username": "King",
-      "avatar": "https://i.pravatar.cc/150?img=3",
+      "avatar": "assets/images/image-3.jpg",
     },
     "media": "assets/videos/video-3.mp4",
     "description": "sed do eiusmod tempor incididunt",
     "comment": 834,
     "like": 989,
+    "bookmark": 8,
+    "share": 98,
   },
   {
     "profile": {
       "username": "Queen",
-      "avatar": "https://i.pravatar.cc/150?img=4",
+      "avatar": "assets/images/image-4.jpg",
     },
     "media": "assets/videos/video-4.mp4",
     "description": "ut labore et dolore magna aliqua",
     "comment": 434,
     "like": 789,
+    "bookmark": 789,
+    "share": 79,
   }
 ];
 
@@ -52,12 +60,16 @@ class Accueil extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       body: PageView(
+        /*
         scrollDirection: Axis.vertical,
         children: data.map((item) {
           return FeedComponent(
             item: item,
           );
-        }).toList(),
+        }).toList(),*/
+        children: [
+          Profile(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {

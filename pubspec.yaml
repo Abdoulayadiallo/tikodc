@@ -39,6 +39,7 @@ dependencies:
   video_player: ^2.4.7
   google_fonts: ^3.0.1
   intl: ^0.17.0
+  font_awesome_flutter: ^10.2.1
 
 dev_dependencies:
   flutter_test:
@@ -62,3 +63,9 @@ flutter:
     - assets/videos/video-2.mp4
     - assets/videos/video-3.mp4
     - assets/videos/video-4.mp4
+    - assets/images/image-1.jpg
+    - assets/images/image-2.jpg
+    - assets/images/image-3.jpg
+    - assets/images/image-4.jpg
+    - assets/images/disc_icon.png
+    - assets/images/tiktok_icon.png

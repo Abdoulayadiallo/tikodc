@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class LikeWidget extends StatelessWidget {
+class BookmarkWidget extends StatelessWidget {
   final int count;
   final Function()? onTap;
 
-  const LikeWidget({Key? key, required this.count, this.onTap})
+  const BookmarkWidget({Key? key, required this.count, this.onTap})
       : super(key: key);
 
   @override
@@ -23,7 +23,7 @@ class LikeWidget extends StatelessWidget {
                 child: IconButton(
                   onPressed: onTap,
                   icon: const Icon(
-                    Icons.favorite,
+                    Icons.bookmark,
                     color: Colors.white38,
                     size: 45.0,
                   ),
@@ -36,10 +36,10 @@ class LikeWidget extends StatelessWidget {
           NumberFormat.compact().format(count),
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
           ),
-        ),
+        )
       ],
     );
   }
