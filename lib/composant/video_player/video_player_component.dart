@@ -52,8 +52,9 @@ class _VideoPlayerComponent extends State<VideoPlayerComponent> {
               child: VideoPlayer(_controller),
             )
           : Container(),
+      //
       Positioned(
-        bottom: 2.0,
+        bottom: 80.0,
         left: 0.0,
         right: 0.0,
         child: VideoProgressBarComponent(

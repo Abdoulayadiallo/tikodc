@@ -88,7 +88,8 @@ void _openPopup(context) {
                           ),
                         ),
                         const Icon(
-                          Icons.more,
+                          Icons.question_mark_rounded,
+                          color: Colors.grey,
                         )
                       ]),
                   const SizedBox(
@@ -329,7 +330,7 @@ void _openPopup(context) {
                   ),
                   ButtonTheme(
                     child: ElevatedButton(
-                      onPressed: () => {_openConnexion(context)},
+                      onPressed: () => {},
                       style: ElevatedButton.styleFrom(
                         elevation: 0.0,
                         shape: const RoundedRectangleBorder(
@@ -365,7 +366,7 @@ void _openPopup(context) {
                   ButtonTheme(
                     minWidth: 250.0,
                     child: ElevatedButton(
-                      onPressed: () => {},
+                      onPressed: () => {_openConnexion(context)},
                       style: ElevatedButton.styleFrom(
                         elevation: 0.0,
                         shape: const RoundedRectangleBorder(

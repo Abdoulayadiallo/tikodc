@@ -20,7 +20,7 @@ class App extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const Accueil(),
+      home: Accueil(),
     );
   }
 }

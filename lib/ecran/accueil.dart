@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tikodc/ecran/profile.dart';
 
+import '../composant/feed/feed_component.dart';
+
 const List<Map<String, dynamic>> data = [
   {
     "profile": {
@@ -52,29 +54,60 @@ const List<Map<String, dynamic>> data = [
   }
 ];
 
-class Accueil extends StatelessWidget {
+class Accueil extends StatefulWidget {
   const Accueil({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      body: PageView(
-        /*
+  _AccueilState createState() => _AccueilState();
+}
+
+class _AccueilState extends State<Accueil> {
+  int _selectedIndex = 0;
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final List<Widget> _pages = [
+    PageView(
         scrollDirection: Axis.vertical,
         children: data.map((item) {
           return FeedComponent(
             item: item,
           );
-        }).toList(),*/
-        children: [
-          Profile(),
-        ],
-      ),
+        }).toList()),
+    const Center(
+      child: Text('PLUS'),
+    ),
+    const Center(
+      child: Text('PLUS'),
+    ),
+    const Center(
+      child: Text('INBOX'),
+    ),
+    const Profile()
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_selectedIndex],
+      extendBody: true,
+      // body: PageView(
+      //   scrollDirection: Axis.vertical,
+      //   children: data.map((item) {
+      //     return FeedComponent(
+      //       item: item,
+      //     );
+      //   }).toList(),
+      // children: [
+      //   Profile(),
+      // ],
+
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (value) {
-          print(value);
-        },
+        currentIndex: _selectedIndex,
+        onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xFF141518),
         elevation: 0,
