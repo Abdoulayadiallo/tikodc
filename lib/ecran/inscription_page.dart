@@ -11,6 +11,7 @@ class InscriptionPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
           bottom: const TabBar(
             indicatorColor: Colors.black,
             tabs: [
@@ -22,16 +23,22 @@ class InscriptionPage extends StatelessWidget {
               ),
             ],
           ),
-          title: Center(child: Text('Inscription')),
+          title: const Center(
+              child: Text(
+            'Inscription',
+            style: TextStyle(color: Colors.black),
+          )),
           actions: [
             // action button
             IconButton(
-              icon: Icon(Icons.question_mark_outlined),
+              icon: Icon(Icons.help_outline_rounded),
+              color: Colors.grey,
               onPressed: () {},
             ),
           ],
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
+            color: Colors.black,
             onPressed: () {
               Navigator.pop(context);
             },
