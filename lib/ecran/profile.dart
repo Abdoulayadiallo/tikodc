@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'inscription_page.dart';
+
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -116,7 +118,14 @@ void _openPopup(context) {
                   ButtonTheme(
                     minWidth: 250.0,
                     child: ElevatedButton(
-                      onPressed: () => {},
+                      onPressed: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => InscriptionPage(),
+                          ),
+                        )
+                      },
                       style: ElevatedButton.styleFrom(
                         elevation: 0.0,
                         shape: const RoundedRectangleBorder(
