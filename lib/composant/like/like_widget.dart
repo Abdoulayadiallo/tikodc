@@ -32,12 +32,15 @@ class LikeWidget extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-          NumberFormat.compact().format(count),
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.w300,
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: Text(
+            NumberFormat.compact().format(count),
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w300,
+            ),
           ),
         ),
       ],

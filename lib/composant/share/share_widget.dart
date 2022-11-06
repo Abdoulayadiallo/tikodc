@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class ShareWidget extends StatelessWidget {
@@ -13,7 +14,7 @@ class ShareWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
+          padding: const EdgeInsets.only(bottom: 4.0),
           child: ClipOval(
             child: Container(
               width: 60,
@@ -22,23 +23,29 @@ class ShareWidget extends StatelessWidget {
               child: Center(
                 child: IconButton(
                   onPressed: onTap,
-                  icon: const Icon(
-                    Icons.share,
+                  icon: FaIcon(
+                    FontAwesomeIcons.share,
                     color: Colors.white38,
-                    size: 45.0,
+                    size: 35.0,
                   ),
                 ),
               ),
             ),
           ),
         ),
-        Text(
-          NumberFormat.compact().format(count),
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.w500,
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: Text(
+            NumberFormat.compact().format(count),
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w300,
+            ),
           ),
+        ),
+        SizedBox(
+          height: 15.0,
         )
       ],
     );
