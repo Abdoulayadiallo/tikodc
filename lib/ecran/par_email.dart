@@ -23,67 +23,61 @@ class ParEmailPageState extends State<ParEmailPage> {
 // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Flexible(
-            child: TextFormField(
-              onChanged: (text) {
-                print('First text field: $text');
-              },
-              // The validator receives the text that the user has entered.
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              width: 350,
+              padding: EdgeInsets.all(10.0),
+              child: TextFormField(
+                cursorColor: Colors.red,
+                onChanged: (text) {
+                  print('First text field: $text');
+                },
+                // The validator receives the text that the user has entered.
 
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                icon: const Icon(Icons.person),
-                hintText: 'Numéro de téléphone',
+                decoration: const InputDecoration(
+                  focusColor: Colors.red,
+                  border: UnderlineInputBorder(),
+                  hintText: 'Adresse e-mail',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Saisis une adresse e-mail valide';
+                  }
+                  return null;
+                },
+                // Clavier type email
+                keyboardType: TextInputType.emailAddress,
+                //Permettre type nombre seulement
+                /*inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                ],*/
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              // Clavier type nombre
-              keyboardType: TextInputType.number,
-              //Permettre type nombre seulement
-              inputFormatters: <TextInputFormatter>[
-                FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-              ],
             ),
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              icon: const Icon(Icons.calendar_today),
-              hintText: 'Enter your date of birth',
-              labelText: 'Dob',
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter valid date';
-              }
-              return null;
-            },
-          ),
-          Center(
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red[400]),
+            Container(
+              width: 350,
+              padding: EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red[400]),
+                ),
+                onPressed: () {
+                  // Validate returns true if the form is valid, or false otherwise.
+                  if (_formKey.currentState!.validate()) {
+                    // If the form is valid, display a snackbar. In the real world,
+                    // you'd often call a server or save the information in a database.
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Processing Data')),
+                    );
+                  }
+                },
+                child: const Text('Suivant'),
               ),
-              onPressed: () {
-                // Validate returns true if the form is valid, or false otherwise.
-                if (_formKey.currentState!.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
-                  );
-                }
-              },
-              child: const Text('Submit'),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
