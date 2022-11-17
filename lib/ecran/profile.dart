@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tikodc/ecran/connexion/connexion_page.dart';
 
-import 'inscription_page.dart';
+import 'inscription/inscription_page.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -456,12 +457,12 @@ void _openConnexion(context) {
                     height: 50.0,
                   ),
                   const Text(
-                    'Inscrit toi sur TikODC',
+                    'Connecte-toi sur TikODC',
                     style: TextStyle(fontSize: 25.0),
                   ),
                   const SizedBox(height: 15.0),
                   const Text(
-                    'Crée un profil ,suis d’autres comptes, crée tes propres vidéos et bien plus encore.',
+                    'Gère ton comte, consulte les notifications,commente des vidéos et bien plus encore.',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors.black54,
@@ -471,7 +472,14 @@ void _openConnexion(context) {
                   ButtonTheme(
                     minWidth: 250.0,
                     child: ElevatedButton(
-                      onPressed: () => {},
+                      onPressed: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ConnexionPage(),
+                          ),
+                        )
+                      },
                       style: ElevatedButton.styleFrom(
                         elevation: 0.0,
                         shape: const RoundedRectangleBorder(

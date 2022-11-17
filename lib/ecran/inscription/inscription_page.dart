@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tikodc/ecran/par_email.dart';
-import 'package:tikodc/ecran/par_telephone.dart';
+import 'package:tikodc/ecran/inscription/par_email.dart';
+import 'package:tikodc/ecran/inscription/par_telephone.dart';
 
 class InscriptionPage extends StatelessWidget {
   const InscriptionPage({Key? key}) : super(key: key);

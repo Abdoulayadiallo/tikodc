@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tikodc/ecran/inscription/par_email.dart';
-import 'package:tikodc/ecran/inscription/par_telephone.dart';
+import 'package:tikodc/ecran/connexion/par_email.dart';
+import 'package:tikodc/ecran/connexion/par_telephone.dart';
 
-class InscriptionPage extends StatelessWidget {
-  const InscriptionPage({Key? key}) : super(key: key);
+class ConnexionPage extends StatelessWidget {
+  const ConnexionPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class InscriptionPage extends StatelessWidget {
           ),
           title: const Center(
               child: Text(
-            'Inscription',
+            'Connexion',
             style: TextStyle(color: Colors.black),
           )),
           actions: [

@@ -59,6 +59,31 @@ class ParEmailPageState extends State<ParEmailPage> {
             Container(
               width: 350,
               padding: EdgeInsets.all(10.0),
+              child: TextFormField(
+                cursorColor: Colors.red,
+                onChanged: (text) {
+                  print('First text field: $text');
+                },
+                // The validator receives the text that the user has entered.
+
+                decoration: const InputDecoration(
+                  focusColor: Colors.red,
+                  border: UnderlineInputBorder(),
+                  hintText: 'Mot de passe',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Saisis une adresse e-mail valide';
+                  }
+                  return null;
+                },
+                // Clavier type email
+                keyboardType: TextInputType.text,
+              ),
+            ),
+            Container(
+              width: 350,
+              padding: EdgeInsets.all(10.0),
               child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.red[400]),
@@ -73,7 +98,7 @@ class ParEmailPageState extends State<ParEmailPage> {
                     );
                   }
                 },
-                child: const Text('Suivant'),
+                child: const Text('Connexion'),
               ),
             ),
           ],

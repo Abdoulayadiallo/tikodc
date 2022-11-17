@@ -108,7 +108,7 @@ class ParTelephonePageState extends State<ParTelephonePage> {
                     );
                   }
                 },
-                child: const Text('Suivant'),
+                child: const Text('Envoyer un code'),
               ),
             ),
           ],
