@@ -18,6 +18,7 @@ class ParTelephonePageState extends State<ParTelephonePage> {
 // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
   final countryPicker = const FlCountryCodePicker();
+  final TextEditingController phoneNumberController = TextEditingController();
   CountryCode? countryCode;
   @override
   Widget build(BuildContext context) {
@@ -27,26 +28,31 @@ class ParTelephonePageState extends State<ParTelephonePage> {
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
             Container(
-              width: 350,
               padding: EdgeInsets.all(10.0),
               child: TextFormField(
+                controller: phoneNumberController,
                 cursorColor: Colors.red,
+                keyboardType: TextInputType.number,
+                textInputAction: TextInputAction.done,
+                maxLines: 1,
                 onChanged: (text) {
                   print('First text field: $text');
                 },
                 // The validator receives the text that the user has entered.
 
                 decoration: InputDecoration(
+                  hintText: "Numero",
                   focusColor: Colors.red,
                   border: UnderlineInputBorder(),
-                  hintText: 'Numero',
                   prefixIcon: Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         GestureDetector(
                           onTap: () async {
@@ -79,7 +85,6 @@ class ParTelephonePageState extends State<ParTelephonePage> {
                   return null;
                 },
                 // Clavier type email
-                keyboardType: TextInputType.emailAddress,
                 //Permettre type nombre seulement
                 /*inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
